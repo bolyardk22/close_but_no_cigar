@@ -1,5 +1,5 @@
 def what_number
-	p "Please enter a 4-digit number."
+	p "Please enter a number between 1000 and 9999."
 	ticket = gets.chomp
 end
 
@@ -7,7 +7,7 @@ def winning_numbers
 	winners = []
 
 	5.times do
-		winners.push(rand(10 ** 4).to_s)
+		winners.push("#{rand(9999).to_s.center(4, rand(9).to_s)}; ")
 	end
 
 	winners
@@ -25,4 +25,4 @@ def lucky(x)
 	end
 end
 
-puts lucky(lotto_func(winning_numbers,what_number))
+puts "#{lucky(lotto_func(winning_numbers,what_number))} Winning numbers: #{winning_numbers.join}"

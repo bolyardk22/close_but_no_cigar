@@ -31,4 +31,8 @@ class Lotto_test <Minitest::Test
 		assert_equal(Array,winning_numbers.class)
 	end
 
+	def test_winning_numbers_five
+		assert_equal(5,winning_numbers.count)
+	end
+
 end
