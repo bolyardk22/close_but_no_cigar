@@ -3,9 +3,18 @@ def what_number
 	ticket = gets.chomp
 end
 
-def lotto_func(n)
-	winners = ["3748","8343","1232","8524","5242"]
-	winners.include?"#{n}"
+def winning_numbers
+	winners = []
+
+	5.times do
+		winners.push(rand(10 ** 4).to_s)
+	end
+
+	winners
+end
+
+def lotto_func(w,t)
+	w.include?"#{t}"
 end
 
 def lucky(x)
@@ -16,4 +25,4 @@ def lucky(x)
 	end
 end
 
-puts lucky(lotto_func(what_number))
+puts lucky(lotto_func(winning_numbers,what_number))
