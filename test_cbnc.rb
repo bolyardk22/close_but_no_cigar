@@ -35,4 +35,9 @@ class Lotto_test <Minitest::Test
 		assert_equal(5,winning_numbers.count)
 	end
 
+	def test_split_ticket_works
+		assert_equal(4,split_ticket_into_array(1234).count)
+		assert_equal(Array,split_ticket_into_array(1234).class)
+	end
+
 end
