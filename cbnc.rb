@@ -45,7 +45,7 @@ def lotto_func(w,t)
 
 		lottonum += 1
 		#p match
-		match_array.push(match >= 3)
+		match_array.push(match == 3)
 
 	end
 	#p match_array
