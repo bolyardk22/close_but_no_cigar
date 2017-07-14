@@ -8,11 +8,11 @@ class Lotto_test <Minitest::Test
 	end
 
 	def test_winning_num_in_lotto_returns_true
-		assert_equal(true,lotto_func("1232","1232"))
+		assert_equal(true,lotto_func("1232","1232",4))
 	end
 
 	def test_losing_num_in_lotto_returns_false
-		assert_equal(false,lotto_func("1232","8745"))
+		assert_equal(false,lotto_func("1232","8745",4))
 	end
 
 	def test_lucky_func_winner
@@ -20,19 +20,19 @@ class Lotto_test <Minitest::Test
 	end
 
 	def test_lucky_func_loser
-		assert_equal("Sorry, you lost this time.",lucky(false))
+		assert_equal("Sorry, you lost this time.",lucky(false),4)
 	end
 
 	def test_both_work_winner
-		assert_equal("Congratulations, you're a winner!",lucky(lotto_func("1232","1232")))
+		assert_equal("Congratulations, you're a winner!",lucky(lotto_func("1232","1232",4)))
 	end
 
 	def test_winning_numbers_array
-		assert_equal(Array,winning_numbers.class)
+		assert_equal(Array,winning_numbers(4).class)
 	end
 
 	def test_winning_numbers_five
-		assert_equal(5,winning_numbers.count)
+		assert_equal(5,length_of_ticket(15589).count)
 	end
 
 	def test_split_ticket_works
