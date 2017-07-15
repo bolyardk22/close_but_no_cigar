@@ -39,7 +39,7 @@ def winning_numbers(c)
 		winners.push("#{rand(10 ** c).to_s.rjust(c, '0')}")
 	end
 
-	#end up with five winning numbers of c digits in an array
+	#end up with five strings of winning numbers of c digits in an array
 	winners
 end
 
