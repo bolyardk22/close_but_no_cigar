@@ -8,7 +8,7 @@ class Lotto_test <Minitest::Test
 	end
 
 	def test_winning_num_in_lotto_returns_true
-		assert_equal(true,lotto_func("1232","1232",4))
+		assert_equal(true,lotto_func("1234","1234",4))
 	end
 
 	def test_losing_num_in_lotto_returns_false
