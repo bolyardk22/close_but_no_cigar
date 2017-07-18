@@ -73,7 +73,7 @@ def lotto_func(w,t,d)
 	#lottonum is the index position in the winning ticket array
 	lottonum = 0
 
-	#match_array is the array which holds true/false values for each position in the winning number array
+	#match_array is the array which holds true, false, or almost for each position in the winning number array
 	match_array = []
 
 	#makes sure each winning number gets evaluated
