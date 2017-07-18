@@ -7,28 +7,28 @@ class Lotto_test <Minitest::Test
 		assert_equal(1,1)
 	end
 
-	def test_winning_num_in_lotto_returns_true
-		assert_equal(true,lotto_func(["1232","9874","4789","7776","6054"],[1,2,3,4],4))
+	def test_winning_num_in_lotto_returns_almost
+		assert_equal("almost",lotto_func(["1232","9874","4789","7776","6054"],[1,2,3,4],4))
 	end
 
-	def test_losing_num_in_lotto_returns_false
-		assert_equal(false,lotto_func(["1234","9874","4789","7776","6054"],[1,2,3,4],4))
+	def test_losing_num_in_lotto_returns_true
+		assert_equal("youwin",lotto_func(["1234","9874","4789","7776","6054"],[1,2,3,4],4))
 	end
 
 	def test_lucky_func_winner
-		assert_equal("Congratulations, you're a winner!",lucky(true))
+		assert_equal("Congratulations, you're a winner!",lucky("youwin"))
 	end
 
 	def test_lucky_func_loser
-		assert_equal("Sorry, you lost this time.",lucky(false),4)
+		assert_equal("Sorry, you lost this time.",lucky("youlose"),4)
 	end
 
 	def test_lucky_with_lotto_func_winner
-		assert_equal("Congratulations, you're a winner!",lucky(lotto_func(["1232","9874","4789","7776","6054","1232"],[1,2,3,4],4)))
+		assert_equal("Congratulations, you're a winner!",lucky(lotto_func(["1234","9874","4789","7776","6054","1232"],[1,2,3,4],4)))
 	end
 
 	def test_lucky_with_lotto_func_loser
-		assert_equal("Sorry, you lost this time.",lucky(lotto_func(["1234","9874","4789","7776","6054"],[1,2,3,4],4)))
+		assert_equal("Sorry, you lost this time.",lucky(lotto_func(["1267","9874","4789","7776","6054"],[1,2,3,4],4)))
 	end
 
 	def test_winning_numbers_array

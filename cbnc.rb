@@ -1,8 +1,22 @@
 #allows the user to input a ticket number
-#results in a number
+#results in a number in a string
 def what_number
 	p "Please enter a number greater than zero."
-	ticket = gets.chomp
+
+	ticket = gets.to_i
+
+	#makes sure they enter a number greater than zero
+	loop do
+		if ticket <= 0
+			p "Sorry, you must enter a number greater than zero."
+			ticket = gets.to_i
+
+		else
+			break
+		end
+	end
+
+	ticket.to_s
 end
 
 #variable for the ticket the user enters
@@ -91,25 +105,43 @@ def lotto_func(w,t,d)
 		lottonum += 1
 
 		#determines if all but one digit of the ticket matches the winning number - which is how this lottery is won
-		match_array.push(match == d - 1)
+		if match == d
+			match_array.push(true)
 
+		elsif match == (d - 1)
+			match_array.push("almost")
+
+		else
+			match_array.push(false)
+		end
 	end
 
-	#determines if there are any true values in the match_array
-	#if there are, returns true
-	#if there are no true values, returns false
-	answer = match_array.any?
+	#determines if there are any true or almost in match_array
+	if match_array.include?(true)
+		returnvalue = "youwin"
+
+	elsif match_array.include?"almost"
+		returnvalue = "almost"
+
+	else
+		returnvalue = "youlose"
+	end
 end
 
 #determines whether the lottery has been won
 #results in a string
 def lucky(x)
-	#x is a true/false value
-
-	if x == true
+	
+	#x is youwin, almost, or youlose
+	if x == "youwin"
 		a = "Congratulations, you're a winner!"
+
+	elsif x == "almost"
+		a = "You were only off by one digit!"
+
 	else
 		a = "Sorry, you lost this time."
+	
 	end
 end
 
